@@ -8,9 +8,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.wappit.quicklauncher.R
 import com.wappit.quicklauncher.databinding.FragmentWebBinding
+import com.wappit.quicklauncher.presentation.viewmodel.MainViewModel
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class WebFragment : Fragment() {
     private lateinit var binding: FragmentWebBinding
+    private val viewModel by activityViewModel<MainViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
