@@ -6,11 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.wappit.quicklauncher.R
 import com.wappit.quicklauncher.databinding.FragmentWebBinding
 import com.wappit.quicklauncher.presentation.viewmodel.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
 class WebFragment : Fragment() {
     private lateinit var binding: FragmentWebBinding
@@ -22,8 +22,17 @@ class WebFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_web, container, false)
-        binding.lifecycleOwner = this
+        binding.lifecycleOwner = viewLifecycleOwner
+
+        initView()
 
         return binding.root
+    }
+
+    private fun initView() {
+        binding.fragmentWebButtonSettings.setOnClickListener {
+            val action = WebFragmentDirections.actionWebFragmentToSettingsFragment()
+            it.findNavController().navigate(action)
+        }
     }
 }

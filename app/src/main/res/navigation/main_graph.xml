@@ -9,5 +9,14 @@
         android:id="@+id/webFragment"
         android:name="com.wappit.quicklauncher.presentation.ui.web.WebFragment"
         android:label="fragment_web"
-        tools:layout="@layout/fragment_web" />
+        tools:layout="@layout/fragment_web" >
+        <action
+            android:id="@+id/action_webFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.wappit.quicklauncher.presentation.ui.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
