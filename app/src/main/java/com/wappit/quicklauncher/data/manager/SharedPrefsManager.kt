@@ -9,7 +9,7 @@ class SharedPrefsManager(context: Context) {
     private val pref: SharedPreferences = context.getSharedPreferences("QuickLauncher", 0) // 0 - for private mode
     private val editor: SharedPreferences.Editor = pref.edit()
 
-    fun saveUrl(url: String) {
+    fun saveUrl(url: String?) {
         with(editor) {
             putString(SAVED_URL_KEY, url)
             commit()

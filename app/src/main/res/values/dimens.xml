@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="space_large_plus">32dp</dimen>
+    <dimen name="space_large">24dp</dimen>
+    <dimen name="space_medium_plus">20dp</dimen>
+    <dimen name="space_medium">16dp</dimen>
+    <dimen name="space_std_plus">12dp</dimen>
+    <dimen name="space_std">8dp</dimen>
+    <dimen name="space_small">4dp</dimen>
+    <dimen name="space_one">1dp</dimen>
+
+    <dimen name="text_extra_plus">60sp</dimen>
+    <dimen name="text_extra">50sp</dimen>
+    <dimen name="text_huge_plus">36sp</dimen>
+    <dimen name="text_huge">32sp</dimen>
+    <dimen name="text_large_plus">28sp</dimen>
+    <dimen name="text_large">24sp</dimen>
+    <dimen name="text_medium_plus">22sp</dimen>
+    <dimen name="text_medium">20sp</dimen>
+    <dimen name="text_std_plus">18sp</dimen>
+    <dimen name="text_std">16sp</dimen>
+    <dimen name="text_small">14sp</dimen>
+</resources>

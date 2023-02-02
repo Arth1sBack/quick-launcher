@@ -1,15 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.wappit.quicklauncher.presentation.viewmodel.MainViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_settings_main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".presentation.ui.settings.SettingsFragment">
+        android:paddingTop="@dimen/space_large">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragment_settings_guideline_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/space_large"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/fragment_settings_guideline_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/space_large"/>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="@string/hello_blank_fragment" />
+            android:id="@+id/fragment_settings_textview_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_large_plus"
+            android:textStyle="bold"
+            android:text="Settings"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/fragment_settings_guideline_start" />
 
-    </FrameLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fragment_settings_textinput_url"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="URL"
+            android:layout_marginTop="@dimen/space_std_plus"
+            app:layout_constraintStart_toStartOf="@id/fragment_settings_guideline_start"
+            app:layout_constraintEnd_toEndOf="@id/fragment_settings_guideline_end"
+            app:layout_constraintTop_toBottomOf="@id/fragment_settings_textview_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/fragment_settings_edittext_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@={ viewModel.appState.url }"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
