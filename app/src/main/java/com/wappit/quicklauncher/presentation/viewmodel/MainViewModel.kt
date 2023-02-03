@@ -11,10 +11,14 @@ class MainViewModel(
     var appState = MutableLiveData<AppState>()
 
     init {
-        appState.value = AppState(sharedPrefsManager.retrieveSavedUrl())
+        appState.value = AppState(
+            sharedPrefsManager.retrieveSavedUrl(),
+            sharedPrefsManager.retrieveSavedButtonOpacity()
+        )
     }
 
     fun saveData() {
         sharedPrefsManager.saveUrl(appState.value?.url)
+        sharedPrefsManager.saveButtonOpacity(appState.value?.settingsButtonOpacity)
     }
 }

@@ -20,6 +20,7 @@
             android:id="@+id/fragment_web_button_settings"
             android:layout_width="125dp"
             android:layout_height="125dp"
-            android:text="settings" />
+            android:text="settings"
+            android:alpha="@{ viewModel.appState.settingsButtonOpacity / 100F }"/>
     </FrameLayout>
 </layout>

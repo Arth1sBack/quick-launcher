@@ -1,4 +1,4 @@
-package com.wappit.quicklauncher.presentation.ui.extension
+package com.wappit.quicklauncher.presentation.extension
 
 import android.app.Activity
 import android.view.View

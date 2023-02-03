@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.SharedPreferences
 
 private const val SAVED_URL_KEY = "SAVED_URL_KEY"
+private const val SETTINGS_BUTTON_OPACITY_KEY = "SETTINGS_BUTTON_OPACITY_KEY"
 
 class SharedPrefsManager(context: Context) {
     private val pref: SharedPreferences = context.getSharedPreferences("QuickLauncher", 0) // 0 - for private mode
@@ -18,5 +19,16 @@ class SharedPrefsManager(context: Context) {
 
     fun retrieveSavedUrl(): String? {
         return pref.getString(SAVED_URL_KEY, null)
+    }
+
+    fun saveButtonOpacity(opacity: Float?) {
+        with(editor) {
+            putFloat(SETTINGS_BUTTON_OPACITY_KEY, opacity ?: 100F)
+            commit()
+        }
+    }
+
+    fun retrieveSavedButtonOpacity(): Float {
+        return pref.getFloat(SETTINGS_BUTTON_OPACITY_KEY, 100F)
     }
 }

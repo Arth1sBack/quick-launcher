@@ -9,8 +9,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.wappit.quicklauncher.R
 import com.wappit.quicklauncher.databinding.FragmentSettingsBinding
-import com.wappit.quicklauncher.presentation.ui.extension.hideKeyboard
-import com.wappit.quicklauncher.presentation.ui.extension.onDone
+import com.wappit.quicklauncher.presentation.extension.hideKeyboard
+import com.wappit.quicklauncher.presentation.extension.onDone
 import com.wappit.quicklauncher.presentation.viewmodel.MainViewModel
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
 import org.koin.androidx.viewmodel.ext.android.activityViewModel
