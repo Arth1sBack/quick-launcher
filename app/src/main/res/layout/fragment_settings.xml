@@ -50,7 +50,9 @@
                 android:id="@+id/fragment_settings_edittext_url"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@={ viewModel.appState.url }"/>
+                android:inputType="textUri"
+                android:imeOptions="actionDone"
+                android:text="@={ viewModel.appState.url }" />
 
         </com.google.android.material.textfield.TextInputLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
