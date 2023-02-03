@@ -11,9 +11,7 @@ class MainViewModel(
     var appState = MutableLiveData<AppState>()
 
     init {
-        appState.postValue(
-            AppState(sharedPrefsManager.retrieveSavedUrl())
-        )
+        appState.value = AppState(sharedPrefsManager.retrieveSavedUrl())
     }
 
     fun saveData() {

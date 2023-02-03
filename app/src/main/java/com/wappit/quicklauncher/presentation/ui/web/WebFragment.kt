@@ -1,9 +1,13 @@
 package com.wappit.quicklauncher.presentation.ui.web
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -22,17 +26,39 @@ class WebFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_web, container, false)
+        binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
-        initView()
+        initViews()
 
         return binding.root
     }
 
-    private fun initView() {
+    override fun onStart() {
+        super.onStart()
+        setupWebView()
+    }
+
+    private fun initViews() {
         binding.fragmentWebButtonSettings.setOnClickListener {
-            val action = WebFragmentDirections.actionWebFragmentToSettingsFragment()
-            it.findNavController().navigate(action)
+            navigateToSettingsView()
         }
+    }
+
+    @SuppressLint("SetJavaScriptEnabled")
+    private fun setupWebView() {
+        viewModel.appState.value?.url?.let {
+            with(binding.fragmentWebWebview) {
+                this.settings.javaScriptEnabled = true
+                this.loadUrl(it)
+            }
+            return
+        }
+        navigateToSettingsView()
+
+    }
+    private fun navigateToSettingsView() {
+        val action = WebFragmentDirections.actionWebFragmentToSettingsFragment()
+        binding.root.findNavController().navigate(action)
     }
 }
