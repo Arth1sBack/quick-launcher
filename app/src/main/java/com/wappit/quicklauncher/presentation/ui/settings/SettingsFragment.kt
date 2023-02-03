@@ -1,10 +1,10 @@
 package com.wappit.quicklauncher.presentation.ui.settings
 
+import android.content.res.Resources
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.wappit.quicklauncher.R
@@ -36,6 +36,12 @@ class SettingsFragment : Fragment() {
         initViews()
 
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        binding.fragmentSettingsTextviewResolution.text = "Your current resolution is:\n\t- width : ${Resources.getSystem().displayMetrics.widthPixels}\n\t- height : ${Resources.getSystem().displayMetrics.heightPixels}"
     }
 
     override fun onDestroy() {

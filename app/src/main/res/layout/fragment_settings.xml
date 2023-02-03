@@ -55,5 +55,15 @@
                 android:text="@={ viewModel.appState.url }" />
 
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/fragment_settings_textview_resolution"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_std_plus"
+            android:layout_marginTop="@dimen/text_std_plus"
+            app:layout_constraintTop_toBottomOf="@id/fragment_settings_textinput_url"
+            app:layout_constraintStart_toStartOf="@id/fragment_settings_guideline_start"
+            app:layout_constraintEnd_toEndOf="@id/fragment_settings_guideline_end"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
