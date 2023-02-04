@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">QuickLauncher</string>
 
+    <string name="no_text"/>
+    <string name="settings_button_title">Settings</string>
+
     <string name="settings_button_pos_x_0">Left</string>
     <string name="settings_button_pos_x_50">Centered</string>
     <string name="settings_button_pos_x_100">Right</string>

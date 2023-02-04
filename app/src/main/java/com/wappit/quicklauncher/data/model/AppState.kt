@@ -5,5 +5,7 @@ data class AppState(
     var settingsButtonOpacity: Float?,
     var settingsButtonXPosition: ButtonPosition?,
     var settingsButtonYPosition: ButtonPosition?,
-    var settingsButtonSize: Float?
+    var settingsButtonSize: Float?,
+    var settingsButtonIconVisibility: Boolean?,
+    var settingsButtonTitleVisibility: Boolean?
 )
