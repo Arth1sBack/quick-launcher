@@ -105,5 +105,13 @@ class SettingsFragment : Fragment() {
                 }
             }
         }
+
+        binding.fragmentSettingsSliderButtonSize.setLabelFormatter {
+            when {
+                it < 1 -> getString(R.string.settings_button_size_s)
+                it < 2 -> getString(R.string.settings_button_size_m)
+                else -> getString(R.string.settings_button_size_l)
+            }
+        }
     }
 }

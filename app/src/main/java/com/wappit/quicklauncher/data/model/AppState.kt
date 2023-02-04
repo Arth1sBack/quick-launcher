@@ -4,5 +4,6 @@ data class AppState(
     var url: String?,
     var settingsButtonOpacity: Float?,
     var settingsButtonXPosition: ButtonPosition?,
-    var settingsButtonYPosition: ButtonPosition?
+    var settingsButtonYPosition: ButtonPosition?,
+    var settingsButtonSize: Float?
 )

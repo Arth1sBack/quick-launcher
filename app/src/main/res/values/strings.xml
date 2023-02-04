@@ -8,4 +8,8 @@
     <string name="settings_button_pos_y_0">Up</string>
     <string name="settings_button_pos_y_50">Centered</string>
     <string name="settings_button_pos_y_100">Down</string>
+
+    <string name="settings_button_size_s">Small</string>
+    <string name="settings_button_size_m">Medium</string>
+    <string name="settings_button_size_l">Large</string>
 </resources>

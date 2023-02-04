@@ -20,4 +20,8 @@
     <dimen name="text_std_plus">18sp</dimen>
     <dimen name="text_std">16sp</dimen>
     <dimen name="text_small">14sp</dimen>
+
+    <dimen name="settings_button_size_s">60dp</dimen>
+    <dimen name="settings_button_size_m">185dp</dimen>
+    <dimen name="settings_button_size_l">300dp</dimen>
 </resources>
