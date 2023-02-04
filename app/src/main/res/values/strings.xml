@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">QuickLauncher</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="settings_button_pos_x_0">Left</string>
+    <string name="settings_button_pos_x_50">Centered</string>
+    <string name="settings_button_pos_x_100">Right</string>
+
+    <string name="settings_button_pos_y_0">Up</string>
+    <string name="settings_button_pos_y_50">Centered</string>
+    <string name="settings_button_pos_y_100">Down</string>
 </resources>

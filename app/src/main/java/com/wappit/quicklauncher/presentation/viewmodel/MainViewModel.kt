@@ -3,7 +3,7 @@ package com.wappit.quicklauncher.presentation.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wappit.quicklauncher.data.manager.SharedPrefsManager
-import com.wappit.quicklauncher.presentation.model.AppState
+import com.wappit.quicklauncher.data.model.AppState
 
 class MainViewModel(
     private val sharedPrefsManager: SharedPrefsManager
@@ -11,14 +11,12 @@ class MainViewModel(
     var appState = MutableLiveData<AppState>()
 
     init {
-        appState.value = AppState(
-            sharedPrefsManager.retrieveSavedUrl(),
-            sharedPrefsManager.retrieveSavedButtonOpacity()
-        )
+        appState.value = sharedPrefsManager.retrieveAppState()
     }
 
     fun saveData() {
-        sharedPrefsManager.saveUrl(appState.value?.url)
-        sharedPrefsManager.saveButtonOpacity(appState.value?.settingsButtonOpacity)
+        appState.value?.let {
+            sharedPrefsManager.saveState(it)
+        }
     }
 }

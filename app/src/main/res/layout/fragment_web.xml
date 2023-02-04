@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="viewModel"
             type="com.wappit.quicklauncher.presentation.viewmodel.MainViewModel" />
     </data>
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/fragment_web_constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".presentation.ui.web.WebFragment">
@@ -20,7 +22,11 @@
             android:id="@+id/fragment_web_button_settings"
             android:layout_width="125dp"
             android:layout_height="125dp"
+            android:alpha="@{ viewModel.appState.settingsButtonOpacity / 100F }"
             android:text="settings"
-            android:alpha="@{ viewModel.appState.settingsButtonOpacity / 100F }"/>
-    </FrameLayout>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

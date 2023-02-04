@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import androidx.constraintlayout.widget.ConstraintSet
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
@@ -43,20 +44,34 @@ class WebFragment : Fragment() {
         binding.fragmentWebButtonSettings.setOnClickListener {
             navigateToSettingsView()
         }
+
+        val constraintLayout = binding.fragmentWebConstraintLayout
+        val constraintSet = ConstraintSet()
+        constraintSet.clone(constraintLayout)
+        constraintSet.setHorizontalBias(
+            R.id.fragment_web_button_settings,
+            (viewModel.appState.value?.settingsButtonXPosition?.pos?.toFloat()?: 0F) / 100F
+        )
+        constraintSet.setVerticalBias(
+            R.id.fragment_web_button_settings,
+            (viewModel.appState.value?.settingsButtonYPosition?.pos?.toFloat()?: 100F) / 100F
+        )
+        constraintSet.applyTo(constraintLayout)
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     private fun setupWebView() {
         viewModel.appState.value?.url?.let {
             with(binding.fragmentWebWebview) {
-                this.settings.javaScriptEnabled = true
-                this.loadUrl(it)
+                settings.javaScriptEnabled = true
+                binding.fragmentWebWebview.webViewClient = WebViewClient()
+                loadUrl(it)
             }
             return
         }
         navigateToSettingsView()
-
     }
+
     private fun navigateToSettingsView() {
         val action = WebFragmentDirections.actionWebFragmentToSettingsFragment()
         binding.root.findNavController().navigate(action)
