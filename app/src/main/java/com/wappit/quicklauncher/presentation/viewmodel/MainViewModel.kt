@@ -9,12 +9,18 @@ class MainViewModel(
     private val sharedPrefsManager: SharedPrefsManager
 ) : ViewModel() {
     var appState = MutableLiveData<AppState>()
+    var draftAppState = MutableLiveData<AppState>()
 
     init {
         appState.value = sharedPrefsManager.retrieveAppState()
     }
 
+    fun prepareDraftState() {
+        draftAppState.value = appState.value?.copy()
+    }
+
     fun saveData() {
+        appState.postValue(draftAppState.value)
         appState.value?.let {
             sharedPrefsManager.saveState(it)
         }

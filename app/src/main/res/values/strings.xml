@@ -24,4 +24,6 @@
     <string name="settings_button_size_s">Small</string>
     <string name="settings_button_size_m">Medium</string>
     <string name="settings_button_size_l">Large</string>
+
+    <string name="settings_button_apply_title">Apply</string>
 </resources>

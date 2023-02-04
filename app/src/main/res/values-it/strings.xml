@@ -24,4 +24,6 @@
     <string name="settings_button_size_s">Piccolo</string>
     <string name="settings_button_size_m">Medio</string>
     <string name="settings_button_size_l">Grande</string>
+
+    <string name="settings_button_apply_title">Applicare</string>
 </resources>

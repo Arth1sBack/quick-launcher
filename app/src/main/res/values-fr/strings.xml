@@ -17,11 +17,13 @@
     <string name="settings_button_pos_x_50">Centré</string>
     <string name="settings_button_pos_x_100">Droite</string>
 
-    <string name="settings_button_pos_y_0">Heut</string>
+    <string name="settings_button_pos_y_0">Haut</string>
     <string name="settings_button_pos_y_50">Centré</string>
     <string name="settings_button_pos_y_100">Bas</string>
 
     <string name="settings_button_size_s">Petit</string>
     <string name="settings_button_size_m">Moyen</string>
     <string name="settings_button_size_l">Grand</string>
+
+    <string name="settings_button_apply_title">Appliquer</string>
 </resources>

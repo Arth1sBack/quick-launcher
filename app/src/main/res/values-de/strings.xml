@@ -24,4 +24,6 @@
     <string name="settings_button_size_s">Klein</string>
     <string name="settings_button_size_m">Mittel</string>
     <string name="settings_button_size_l">Groß</string>
+
+    <string name="settings_button_apply_title">Bewerbung</string>
 </resources>

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.wappit.quicklauncher.R
 import com.wappit.quicklauncher.data.model.ButtonPosition
 import com.wappit.quicklauncher.databinding.FragmentSettingsBinding
@@ -32,6 +33,8 @@ class SettingsFragment : Fragment() {
         binding.viewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
 
+        viewModel.prepareDraftState()
+
         KeyboardVisibilityEvent.setEventListener(requireActivity()) {
             if (!it) {
                 binding.fragmentSettingsEdittextUrl.clearFocus()
@@ -47,11 +50,6 @@ class SettingsFragment : Fragment() {
         super.onResume()
 
         binding.fragmentSettingsTextviewResolution.text = "Your current resolution is:\n\t- width : ${Resources.getSystem().displayMetrics.widthPixels}\n\t- height : ${Resources.getSystem().displayMetrics.heightPixels}"
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        viewModel.saveData()
     }
 
     private fun initViews() {
@@ -73,7 +71,7 @@ class SettingsFragment : Fragment() {
                         {
                             val selectedPosition = ButtonPosition.values()[it]
                             setText(selectedPosition.localizedHorizontal)
-                            viewModel.appState.value?.settingsButtonXPosition = selectedPosition
+                            viewModel.draftAppState.value?.settingsButtonXPosition = selectedPosition
                             clearFocus()
                         }, {
                             clearFocus()
@@ -96,7 +94,7 @@ class SettingsFragment : Fragment() {
                         {
                             val selectedPosition = ButtonPosition.values()[it]
                             setText(selectedPosition.localizedVertical)
-                            viewModel.appState.value?.settingsButtonYPosition = selectedPosition
+                            viewModel.draftAppState.value?.settingsButtonYPosition = selectedPosition
                             clearFocus()
                         }, {
                             clearFocus()
@@ -112,6 +110,11 @@ class SettingsFragment : Fragment() {
                 it < 2 -> getString(R.string.settings_button_size_m)
                 else -> getString(R.string.settings_button_size_l)
             }
+        }
+
+        binding.fragmentSettingsButtonApply.setOnClickListener {
+            viewModel.saveData()
+            it.findNavController().popBackStack()
         }
     }
 }

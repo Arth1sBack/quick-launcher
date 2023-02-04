@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:inputType="textUri"
                     android:imeOptions="actionDone"
-                    android:text="@={ viewModel.appState.url }" />
+                    android:text="@={ viewModel.draftAppState.url }" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -75,7 +75,7 @@
                     android:id="@+id/fragment_settings_edittext_button_x_pos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:stringRes="@{ viewModel.appState.settingsButtonXPosition.localizedHorizontal }"/>
+                    app:stringRes="@{ viewModel.draftAppState.settingsButtonXPosition.localizedHorizontal }"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -92,7 +92,7 @@
                     android:id="@+id/fragment_settings_edittext_button_y_pos"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:stringRes="@{ viewModel.appState.settingsButtonYPosition.localizedVertical }"/>
+                    app:stringRes="@{ viewModel.draftAppState.settingsButtonYPosition.localizedVertical }"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -112,7 +112,7 @@
                 android:valueFrom="0"
                 android:valueTo="100"
                 android:stepSize="1"
-                android:value="@={ viewModel.appState.settingsButtonOpacity }"
+                android:value="@={ viewModel.draftAppState.settingsButtonOpacity }"
                 app:layout_constraintTop_toBottomOf="@id/fragment_settings_textview_button_opacity_label"
                 app:layout_constraintStart_toStartOf="@id/fragment_settings_guideline_start"
                 app:layout_constraintEnd_toEndOf="@id/fragment_settings_guideline_end"/>
@@ -134,7 +134,7 @@
                 android:valueFrom="0"
                 android:valueTo="2"
                 android:stepSize="1"
-                android:value="@={ viewModel.appState.settingsButtonSize }"
+                android:value="@={ viewModel.draftAppState.settingsButtonSize }"
                 app:layout_constraintStart_toStartOf="@id/fragment_settings_guideline_start"
                 app:layout_constraintEnd_toEndOf="@id/fragment_settings_guideline_end"
                 app:layout_constraintTop_toBottomOf="@id/fragment_settings_textview_button_size_label"/>
@@ -145,7 +145,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/settings_button_icon_visibility"
                 android:layout_marginTop="@dimen/space_std"
-                android:checked="@={ viewModel.appState.settingsButtonIconVisibility }"
+                android:checked="@={ viewModel.draftAppState.settingsButtonIconVisibility }"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="@id/fragment_settings_guideline_start"
                 app:layout_constraintEnd_toEndOf="@id/fragment_settings_guideline_end"
@@ -157,7 +157,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/settings_button_title_visibility"
                 android:layout_marginTop="@dimen/space_std"
-                android:checked="@={ viewModel.appState.settingsButtonTitleVisibility }"
+                android:checked="@={ viewModel.draftAppState.settingsButtonTitleVisibility }"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="@id/fragment_settings_guideline_start"
                 app:layout_constraintEnd_toEndOf="@id/fragment_settings_guideline_end"
@@ -172,6 +172,17 @@
                 app:layout_constraintStart_toStartOf="@id/fragment_settings_guideline_start"
                 app:layout_constraintEnd_toEndOf="@id/fragment_settings_guideline_end"
                 app:layout_constraintTop_toBottomOf="@id/fragment_settings_checkbox_title_visibility"/>
+
+            <Button
+                android:id="@+id/fragment_settings_button_apply"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_button_apply_title"
+                android:layout_marginTop="@dimen/space_large_plus"
+                app:layout_constraintStart_toStartOf="@id/fragment_settings_guideline_start"
+                app:layout_constraintEnd_toEndOf="@id/fragment_settings_guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_textview_resolution"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>
