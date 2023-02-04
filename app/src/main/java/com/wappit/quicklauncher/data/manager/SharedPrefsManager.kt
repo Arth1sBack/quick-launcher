@@ -25,7 +25,7 @@ class SharedPrefsManager(context: Context) {
             putInt(SETTINGS_BUTTON_Y_POS_KEY, appState.settingsButtonYPosition?.pos ?: 100)
             putFloat(SETTINGS_BUTTON_SIZE_KEY, appState.settingsButtonSize ?: 2F)
             putBoolean(SETTINGS_BUTTON_ICON_VISIBILITY_KEY, appState.settingsButtonIconVisibility ?: false)
-            putBoolean(SETTINGS_BUTTON_TITLE_VISIBILITY_KEY, appState.settingsButtonIconVisibility ?: true)
+            putBoolean(SETTINGS_BUTTON_TITLE_VISIBILITY_KEY, appState.settingsButtonTitleVisibility ?: true)
             commit()
         }
     }

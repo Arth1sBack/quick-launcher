@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuickLauncher</string>
+
+    <string name="no_text"/>
+    <string name="settings_button_title">Ajustes</string>
+
+    <string name="settings_url_field_placeholder">URL</string>
+    <string name="settings_button_x_pos_placeholder">Posición horizontal del botón</string>
+    <string name="settings_button_y_pos_placeholder">Posición vertical del botón</string>
+    <string name="settings_button_oppacity_placeholder">Opacidad de los botones</string>
+    <string name="settings_button_size_placeholder">Tamaño del botón</string>
+    <string name="settings_button_title_visibility">Visibilidad del título del botón</string>
+    <string name="settings_button_icon_visibility">Visibilidad del icono del botón</string>
+
+    <string name="settings_button_pos_x_0">Izquierda</string>
+    <string name="settings_button_pos_x_50">Centrado</string>
+    <string name="settings_button_pos_x_100">Derecha</string>
+
+    <string name="settings_button_pos_y_0">Top</string>
+    <string name="settings_button_pos_y_50">Centrado</string>
+    <string name="settings_button_pos_y_100">Fondo</string>
+
+    <string name="settings_button_size_s">Pequeño</string>
+    <string name="settings_button_size_m">Medio</string>
+    <string name="settings_button_size_l">Grande</string>
+</resources>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuickLauncher</string>
+
+    <string name="no_text"/>
+    <string name="settings_button_title">Impostazioni</string>
+
+    <string name="settings_url_field_placeholder">URL</string>
+    <string name="settings_button_x_pos_placeholder">Posizione orizzontale del pulsante</string>
+    <string name="settings_button_y_pos_placeholder">Posizione verticale del pulsante</string>
+    <string name="settings_button_oppacity_placeholder">Opacità del pulsante</string>
+    <string name="settings_button_size_placeholder">Dimensione del pulsante</string>
+    <string name="settings_button_title_visibility">Visibilità del titolo del pulsante</string>
+    <string name="settings_button_icon_visibility">Visibilità dell\'icona del pulsante</string>
+
+    <string name="settings_button_pos_x_0">Sinistra</string>
+    <string name="settings_button_pos_x_50">Centrato</string>
+    <string name="settings_button_pos_x_100">Diritto</string>
+
+    <string name="settings_button_pos_y_0">Top</string>
+    <string name="settings_button_pos_y_50">Centrato</string>
+    <string name="settings_button_pos_y_100">Fondo</string>
+
+    <string name="settings_button_size_s">Piccolo</string>
+    <string name="settings_button_size_m">Medio</string>
+    <string name="settings_button_size_l">Grande</string>
+</resources>
