@@ -1,5 +1,6 @@
 package com.wappit.quicklauncher.presentation.ui.settings
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.res.Resources
 import android.net.Uri
@@ -53,7 +54,13 @@ class SettingsFragment : Fragment() {
     override fun onResume() {
         super.onResume()
 
-        binding.fragmentSettingsTextviewResolution.text = "Your current resolution is:\n\t- width : ${Resources.getSystem().displayMetrics.widthPixels}\n\t- height : ${Resources.getSystem().displayMetrics.heightPixels}"
+        binding.fragmentSettingsTextviewResolution.text = getString(
+            R.string.settings_text_resolution,
+            Resources.getSystem().displayMetrics.widthPixels,
+            Resources.getSystem().displayMetrics.heightPixels,
+            (Resources.getSystem().displayMetrics.widthPixels / Resources.getSystem().displayMetrics.density).toInt(),
+            (Resources.getSystem().displayMetrics.heightPixels / Resources.getSystem().displayMetrics.density).toInt()
+        )
     }
 
     private fun initViews() {
@@ -72,7 +79,7 @@ class SettingsFragment : Fragment() {
                     view.hideKeyboard()
 
                     dialogModule.displayDialogWithItemsAction(
-                        "Button X Pos",
+                        getString(R.string.settings_button_x_pos_placeholder),
                         ButtonPosition.values().map { getString(it.localizedHorizontal) },
                         {
                             val selectedPosition = ButtonPosition.values()[it]
@@ -95,7 +102,7 @@ class SettingsFragment : Fragment() {
                     view.hideKeyboard()
 
                     dialogModule.displayDialogWithItemsAction(
-                        "Button Y Pos",
+                        getString(R.string.settings_button_y_pos_placeholder),
                         ButtonPosition.values().map { getString(it.localizedVertical) },
                         {
                             val selectedPosition = ButtonPosition.values()[it]

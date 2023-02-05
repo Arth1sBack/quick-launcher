@@ -12,6 +12,7 @@
     <string name="settings_button_size_placeholder">Button size</string>
     <string name="settings_button_title_visibility">Button title visibility</string>
     <string name="settings_button_icon_visibility">Button icon visibility</string>
+    <string name="settings_text_resolution">Native resolution is :\n\t- width : %1$d\n\t- height : %2$d\nLogic resolution is : \n\t- width : %3$d\n\t- height : %4$d</string>
 
     <string name="settings_button_pos_x_0">Left</string>
     <string name="settings_button_pos_x_50">Centered</string>

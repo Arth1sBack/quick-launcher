@@ -12,6 +12,7 @@
     <string name="settings_button_size_placeholder">Dimensione del pulsante</string>
     <string name="settings_button_title_visibility">Visibilità del titolo del pulsante</string>
     <string name="settings_button_icon_visibility">Visibilità dell\'icona del pulsante</string>
+    <string name="settings_text_resolution">La risoluzione nativa è :\n\t- width : %1$d\n\t- height : %2$d\nLa risoluzione logica è : \n\t- width : %3$d\n\t- height : %4$d</string>
 
     <string name="settings_button_pos_x_0">Sinistra</string>
     <string name="settings_button_pos_x_50">Centrato</string>

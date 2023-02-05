@@ -12,6 +12,7 @@
     <string name="settings_button_size_placeholder">Knopfgröße</string>
     <string name="settings_button_title_visibility">Sichtbarkeit des Schaltflächentitels</string>
     <string name="settings_button_icon_visibility">Sichtbarkeit der Schaltflächensymbole</string>
+    <string name="settings_text_resolution">Native Auflösung ist :\n\t- width : %1$d\n\t- height : %2$d\nDie logische Auflösung ist : \n\t- width : %3$d\n\t- height : %4$d</string>
 
     <string name="settings_button_pos_x_0">Links</string>
     <string name="settings_button_pos_x_50">Zentriert</string>
