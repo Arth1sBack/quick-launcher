@@ -23,7 +23,7 @@ class MainViewModel(
         if (draftAppState.value?.url.isNullOrEmpty()) {
             draftAppState.value?.url = "https://www.buymeacoffee.com/mimosa"
         }
-        appState.postValue(draftAppState.value)
+        appState.value = draftAppState.value?.copy()
         appState.value?.let {
             sharedPrefsManager.saveState(it)
         }
