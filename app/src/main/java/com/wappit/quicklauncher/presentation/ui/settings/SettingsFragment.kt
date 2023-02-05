@@ -1,6 +1,8 @@
 package com.wappit.quicklauncher.presentation.ui.settings
 
+import android.content.Intent
 import android.content.res.Resources
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -119,6 +121,10 @@ class SettingsFragment : Fragment() {
         binding.fragmentSettingsButtonApply.setOnClickListener {
             viewModel.saveData()
             it.findNavController().popBackStack()
+        }
+        binding.fragmentSettingsButtonSupport.setOnClickListener {
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(viewModel.buyMeCoffeeUrl))
+            requireActivity().startActivity(browserIntent)
         }
     }
 }

@@ -8,6 +8,8 @@ import com.wappit.quicklauncher.data.model.AppState
 class MainViewModel(
     private val sharedPrefsManager: SharedPrefsManager
 ) : ViewModel() {
+    val buyMeCoffeeUrl = "https://www.buymeacoffee.com/mimosa"
+
     var appState = MutableLiveData<AppState>()
     var draftAppState = MutableLiveData<AppState>()
 
@@ -21,7 +23,7 @@ class MainViewModel(
 
     fun saveData() {
         if (draftAppState.value?.url.isNullOrEmpty()) {
-            draftAppState.value?.url = "https://www.buymeacoffee.com/mimosa"
+            draftAppState.value?.url = buyMeCoffeeUrl
         }
         appState.value = draftAppState.value?.copy()
         appState.value?.let {

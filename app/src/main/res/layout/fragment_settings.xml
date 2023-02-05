@@ -183,12 +183,22 @@
                 app:layout_constraintEnd_toEndOf="@id/fragment_settings_guideline_end"
                 app:layout_constraintTop_toBottomOf="@id/fragment_settings_textview_resolution"/>
 
+            <Button
+                android:id="@+id/fragment_settings_button_support"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_button_buymecoffee_title"
+                android:layout_marginTop="@dimen/space_large_plus"
+                app:layout_constraintStart_toStartOf="@id/fragment_settings_guideline_start"
+                app:layout_constraintEnd_toEndOf="@id/fragment_settings_guideline_end"
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_button_apply"/>
+
             <TextView
                 android:id="@+id/fragment_settings_textview_version"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintStart_toStartOf="@id/fragment_settings_guideline_start"
-                app:layout_constraintTop_toBottomOf="@id/fragment_settings_button_apply"/>
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_button_support"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

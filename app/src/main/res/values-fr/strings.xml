@@ -26,4 +26,5 @@
     <string name="settings_button_size_l">Grand</string>
 
     <string name="settings_button_apply_title">Appliquer</string>
+    <string name="settings_button_buymecoffee_title">Offrez moi un café :)</string>
 </resources>
