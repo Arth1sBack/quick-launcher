@@ -20,6 +20,9 @@ class MainViewModel(
     }
 
     fun saveData() {
+        if (draftAppState.value?.url.isNullOrEmpty()) {
+            draftAppState.value?.url = "https://www.buymeacoffee.com/mimosa"
+        }
         appState.postValue(draftAppState.value)
         appState.value?.let {
             sharedPrefsManager.saveState(it)
