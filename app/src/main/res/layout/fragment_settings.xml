@@ -183,6 +183,13 @@
                 app:layout_constraintEnd_toEndOf="@id/fragment_settings_guideline_end"
                 app:layout_constraintTop_toBottomOf="@id/fragment_settings_textview_resolution"/>
 
+            <TextView
+                android:id="@+id/fragment_settings_textview_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@id/fragment_settings_guideline_start"
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_button_apply"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </layout>

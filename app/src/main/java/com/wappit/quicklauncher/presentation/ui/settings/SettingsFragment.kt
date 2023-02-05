@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import com.wappit.quicklauncher.R
 import com.wappit.quicklauncher.data.model.ButtonPosition
 import com.wappit.quicklauncher.databinding.FragmentSettingsBinding
+import com.wappit.quicklauncher.presentation.composition.AppVersionModule
 import com.wappit.quicklauncher.presentation.composition.DialogModule
 import com.wappit.quicklauncher.presentation.extension.hideKeyboard
 import com.wappit.quicklauncher.presentation.extension.onDone
@@ -24,6 +25,7 @@ class SettingsFragment : Fragment() {
     private lateinit var binding: FragmentSettingsBinding
     private val viewModel by activityViewModel<MainViewModel>()
     private val dialogModule by inject<DialogModule> { parametersOf(requireActivity()) }
+    private val appVersionModule by inject<AppVersionModule>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,6 +55,8 @@ class SettingsFragment : Fragment() {
     }
 
     private fun initViews() {
+        binding.fragmentSettingsTextviewVersion.text = appVersionModule.appVersion()
+
         binding.fragmentSettingsEdittextUrl.onDone {
             it.clearFocus()
             it.hideKeyboard()
