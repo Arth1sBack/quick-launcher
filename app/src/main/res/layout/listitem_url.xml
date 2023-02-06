@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             tools:text="www.example.com"
             android:text="@{ viewModel.url }"
-            android:textSize="@dimen/text_medium"
+            android:textSize="@dimen/text_std_plus"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/list_item_textview_name"/>
 

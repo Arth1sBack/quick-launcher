@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.wappit.quicklauncher.data.manager.SharedPrefsManager
 import com.wappit.quicklauncher.data.model.AppState
+import com.wappit.quicklauncher.presentation.model.UrlViewModel
 
 class MainViewModel(
     private val sharedPrefsManager: SharedPrefsManager
@@ -12,9 +13,23 @@ class MainViewModel(
 
     var appState = MutableLiveData<AppState>()
     var draftAppState = MutableLiveData<AppState>()
+    var urlList = MutableLiveData<List<UrlViewModel>>(emptyList())
 
     init {
         appState.value = sharedPrefsManager.retrieveAppState()
+
+        urlList.postValue(
+            listOf(
+                UrlViewModel(
+                    "Example",
+                    appState.value?.url ?: ""
+                ),
+                UrlViewModel(
+                    "Second example",
+                    "www.example.com"
+                ),
+            )
+        )
     }
 
     fun prepareDraftState() {

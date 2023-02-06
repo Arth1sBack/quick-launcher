@@ -9,7 +9,7 @@ import com.wappit.quicklauncher.presentation.model.UrlViewModel
 import com.wappit.quicklauncher.presentation.viewholder.UrlItemViewHolder
 
 class UrlItemAdapter(
-    private val listener: MutableLiveData<UrlViewModel>
+    private val listener: MutableLiveData<UrlViewModel>? = null
 ): Adapter<UrlItemViewHolder>(), BindableAdapter<List<UrlViewModel>> {
     private var urlList: MutableList<UrlViewModel> = mutableListOf()
 

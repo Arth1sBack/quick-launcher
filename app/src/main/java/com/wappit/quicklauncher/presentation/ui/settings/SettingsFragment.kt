@@ -1,6 +1,5 @@
 package com.wappit.quicklauncher.presentation.ui.settings
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.res.Resources
 import android.net.Uri
@@ -11,13 +10,14 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.wappit.quicklauncher.R
 import com.wappit.quicklauncher.data.model.ButtonPosition
 import com.wappit.quicklauncher.databinding.FragmentSettingsBinding
+import com.wappit.quicklauncher.presentation.adapter.UrlItemAdapter
 import com.wappit.quicklauncher.presentation.composition.AppVersionModule
 import com.wappit.quicklauncher.presentation.composition.DialogModule
 import com.wappit.quicklauncher.presentation.extension.hideKeyboard
-import com.wappit.quicklauncher.presentation.extension.onDone
 import com.wappit.quicklauncher.presentation.viewmodel.MainViewModel
 import net.yslibrary.android.keyboardvisibilityevent.KeyboardVisibilityEvent
 import org.koin.android.ext.android.inject
@@ -29,6 +29,7 @@ class SettingsFragment : Fragment() {
     private val viewModel by activityViewModel<MainViewModel>()
     private val dialogModule by inject<DialogModule> { parametersOf(requireActivity()) }
     private val appVersionModule by inject<AppVersionModule>()
+    private val adapter = UrlItemAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,11 +43,12 @@ class SettingsFragment : Fragment() {
 
         KeyboardVisibilityEvent.setEventListener(requireActivity()) {
             if (!it) {
-                binding.fragmentSettingsEdittextUrl.clearFocus()
+                // binding.fragmentSettingsEdittextUrl.clearFocus()
             }
         }
 
         initViews()
+        initRecyclerView()
 
         return binding.root
     }
@@ -66,10 +68,10 @@ class SettingsFragment : Fragment() {
     private fun initViews() {
         binding.fragmentSettingsTextviewVersion.text = appVersionModule.appVersion()
 
-        binding.fragmentSettingsEdittextUrl.onDone {
+        /*binding.fragmentSettingsEdittextUrl.onDone {
             it.clearFocus()
             it.hideKeyboard()
-        }
+        }*/
 
         with(binding.fragmentSettingsEdittextButtonXPos) {
             isEnabled = true
@@ -132,6 +134,13 @@ class SettingsFragment : Fragment() {
         binding.fragmentSettingsButtonSupport.setOnClickListener {
             val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(viewModel.buyMeCoffeeUrl))
             requireActivity().startActivity(browserIntent)
+        }
+    }
+
+    private fun initRecyclerView() {
+        with(binding.fragmentSettingsRecyclerviewUrls) {
+            layoutManager = LinearLayoutManager(requireContext())
+            adapter = this@SettingsFragment.adapter
         }
     }
 }

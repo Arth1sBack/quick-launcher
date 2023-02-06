@@ -7,13 +7,13 @@ import com.wappit.quicklauncher.presentation.model.UrlViewModel
 
 class UrlItemViewHolder(
     private val binding: ListitemUrlBinding,
-    private val listener: MutableLiveData<UrlViewModel>
+    private val listener: MutableLiveData<UrlViewModel>? = null
 ): ViewHolder(binding.root) {
 
     fun bind (url: UrlViewModel) {
         binding.viewModel = url
         binding.root.setOnClickListener {
-            listener.postValue(url)
+            listener?.postValue(url)
         }
     }
 }

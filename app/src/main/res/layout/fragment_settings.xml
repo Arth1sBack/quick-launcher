@@ -7,7 +7,7 @@
             name="viewModel"
             type="com.wappit.quicklauncher.presentation.viewmodel.MainViewModel" />
     </data>
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -41,7 +41,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="@id/fragment_settings_guideline_start" />
 
-            <com.google.android.material.textfield.TextInputLayout
+            <!--<com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/fragment_settings_textinput_url"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -58,8 +58,19 @@
                     android:inputType="textUri"
                     android:imeOptions="actionDone"
                     android:text="@={ viewModel.draftAppState.url }" />
+            </com.google.android.material.textfield.TextInputLayout> -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fragment_settings_recyclerview_urls"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:overScrollMode="never"
+                app:data="@{ viewModel.urlList }"
+                app:layout_constraintEnd_toEndOf="@id/fragment_settings_guideline_end"
+                app:layout_constraintStart_toStartOf="@id/fragment_settings_guideline_start"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_settings_textview_title"
+                tools:itemCount="2"
+                tools:listitem="@layout/listitem_url" />
 
-            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/fragment_settings_textinput_button_x_pos"
@@ -69,7 +80,7 @@
                 android:layout_marginTop="@dimen/space_std_plus"
                 app:layout_constraintStart_toStartOf="@id/fragment_settings_guideline_start"
                 app:layout_constraintEnd_toEndOf="@id/fragment_settings_guideline_end"
-                app:layout_constraintTop_toBottomOf="@id/fragment_settings_textinput_url">
+                app:layout_constraintTop_toBottomOf="@id/fragment_settings_recyclerview_urls">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fragment_settings_edittext_button_x_pos"
@@ -201,5 +212,5 @@
                 app:layout_constraintTop_toBottomOf="@id/fragment_settings_button_support"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </layout>
