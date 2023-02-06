@@ -6,9 +6,16 @@ import androidx.annotation.StringRes
 import androidx.databinding.BindingAdapter
 import androidx.databinding.InverseBindingAdapter
 import androidx.databinding.InverseBindingListener
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.slider.Slider
+import com.wappit.quicklauncher.presentation.adapter.BindableAdapter
 
-
+@BindingAdapter("data")
+fun <T> setRecyclerViewProperties(recyclerView: RecyclerView, data: T) {
+    if (recyclerView.adapter is BindableAdapter<*>) {
+        (recyclerView.adapter as BindableAdapter<T>).setData(data)
+    }
+}
 @InverseBindingAdapter(attribute = "android:value")
 fun getSliderValue(slider: Slider) = slider.value
 
